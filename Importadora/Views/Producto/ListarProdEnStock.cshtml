@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Importadora.ViewModel.ViewModelProducto>
+
+@{
+    ViewBag.Title = "ListarProdEnStock";
+}
+
+<h2>Productos en stock</h2>
+
+
+<table class="table  table-hover">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Stock)
+        </th>
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr class="active">
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Stock)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details","Producto", new { id = item.Id },null) 
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+        </td>
+    </tr>
+}
+
+</table>

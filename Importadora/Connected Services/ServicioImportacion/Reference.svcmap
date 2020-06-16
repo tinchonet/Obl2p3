@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="252a6322-b1eb-4dea-bb96-dc3f7b02ea7b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:60773/ServicioImportacion.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServicioImportacion.xsd" MetadataType="Schema" ID="dcef1c3e-165e-4efb-a9a8-01014a4681d4" SourceId="1" SourceUrl="http://localhost:60773/ServicioImportacion.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServicioImportacion.wsdl" MetadataType="Wsdl" ID="74af7a5c-55ad-4486-8aa7-718ab9eea9ef" SourceId="1" SourceUrl="http://localhost:60773/ServicioImportacion.svc?wsdl" />
+    <MetadataFile FileName="ServicioImportacion1.xsd" MetadataType="Schema" ID="dcd2fa12-1641-4788-9f99-4e3a1240b36b" SourceId="1" SourceUrl="http://localhost:60773/ServicioImportacion.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServicioImportacion2.xsd" MetadataType="Schema" ID="704c8b89-bf84-4131-a9a4-ee2f46d5a75c" SourceId="1" SourceUrl="http://localhost:60773/ServicioImportacion.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServicioImportacion.disco" MetadataType="Disco" ID="0f4da277-1a1a-423b-ad29-5a0c4a317b05" SourceId="1" SourceUrl="http://localhost:60773/ServicioImportacion.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

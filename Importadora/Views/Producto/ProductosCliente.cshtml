@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Importadora.ViewModel.ViewModelProducto>
+
+@{
+    ViewBag.Title = "ProducosCliente";
+}
+
+<h2>Productos del cliente</h2>
+
+
+<table class="table  table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Peso)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="active">
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Peso)
+            </td>
+            <td>
+                @Html.ActionLink("Seleccionar Producto", "Create", "Importacion", new { id = item.Id }, null) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+<p>
+    @Html.ActionLink("Back to previous page", null, null, null, new { href = Request.UrlReferrer })
+</p>

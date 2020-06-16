@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Importadora.ViewModel.ViewModelImportacion>
+
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+}
+
+<h2>PortLog S.A.</h2>
+
+@if (ViewBag.Mensaje != null)
+{
+    <div class="alert alert-dismissible alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>@ViewBag.Mensaje</strong>
+    </div>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CantidadUnidades)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdProducto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombrePord)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaIngreso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaSalida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        @if (Session["rol"].ToString() == "admin")
+        {
+            <th>
+                @Html.DisplayNameFor(model => model.Costo)
+            </th>
+        }
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CantidadUnidades)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdProducto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombrePord)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaIngreso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaSalida)
+        </td>
+        <td>
+            @if (item.Estado == 'n')
+            {
+                <spa>En deposito</spa>
+            }
+            else
+            {
+                <spa>Salio</spa>
+            }
+
+        </td>
+        @if (Session["rol"].ToString() == "admin")
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Costo)
+            </td>
+        }
+
+    </tr>
+    }
+
+</table>

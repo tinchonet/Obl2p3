@@ -1,0 +1,50 @@
+﻿@model Importadora.ViewModel.ViewModelProducto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles de producto</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Peso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Peso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Rut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Rut)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nombre)
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+    @Html.ActionLink("Back to previous page", null, null, null, new { href = Request.UrlReferrer })
+</p>

@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/login.css" rel="stylesheet" type="text/css" />
+    <title>Index</title>
+</head>
+<body>
+
+    <div class="login-page">
+
+        <div class="form">
+
+            <h2>Ingresar al sistema</h2>
+            <form class="login-form" method="post" action="/usuario/login">
+                <input type="text" placeholder="username" name="user" />
+                <input type="password" placeholder="password" name="password" />
+                <button type="submit">login</button>
+                @if (ViewBag.Mensaje != null)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        @ViewBag.Mensaje
+                    </div>
+                }
+            </form>
+            @*<form class="login-form" >
+                <input type="hidden" placeholder="username" name="user" value="guest" />
+                @*<button type="submit">Continuar como invitado</button>
+            </form>*@
+        </div>
+
+
+
+    </div>
+
+</body>
+
+</html>

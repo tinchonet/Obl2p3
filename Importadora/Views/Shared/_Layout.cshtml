@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container top-nav">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse ">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+
+            </div>
+            @Html.ActionLink("Importadora", "Index", "Importacion", new { area = "" }, new { @class = "navbar-brand " })
+            <div class="navbar-collapse collapse pull-right">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Productos en Stock", "ListarProdEnStock", "Producto")</li>
+                    @if (Session["rol"].ToString() == "deposito")
+                    {
+                        <li>@Html.ActionLink("Alta Importacion", "ListarClientes", "Cliente")</li>
+                    }
+                    @if (Session["rol"].ToString() == "admin")
+                    {
+                        <li>@Html.ActionLink("Alta de Usuario", "Create", "Usuario")</li>
+                        <li>@Html.ActionLink("Prevision de ganancia", "ListarClientes", "Cliente")</li>
+                    }
+                        <li>@Html.ActionLink("Guardar tablas a texto", "Guardar", "Usuario")</li>
+                    <li>@Html.ActionLink("Salir", "salir", "Usuario")</li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container body-content">
+        <div id="contenido">
+            @RenderBody()
+
+        </div>
+
+
+
+    </div>
+    <footer>
+        <hr />
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <link href="~/Content/Custom.css" rel="stylesheet" />
+    @*@RenderSection("scripts", required: false)*@
+    @if (IsSectionDefined("scripts"))
+    {
+        @Scripts.Render("~/bundles/globalizacion")
+        @RenderSection("scripts")
+        <script type="text/javascript">
+            $.validator.methods.number = function (value, element) {
+                return this.optional(element) ||
+                    (value.indexOf('.') < 0 && jQuery.isNumeric(Globalize.parseFloat(value)));
+            };
+            $.validator.methods.date = function (value, element) {
+                return (this.optional(element) ||
+                    Globalize.parseDate(value));
+            };
+            jQuery.extend(jQuery.validator.methods, {
+                range: function (value, element, param) {
+                    var val = Globalize.parseFloat(value);
+                    return this.optional(element) ||
+                        (val >= param[0] && val <= param[1]);
+                }
+            });
+            $(document).ready(function () {
+                Globalize.culture('es-UY');
+            });
+        </script>
+    }
+</body>
+</html>
+
+
+@* ESTILOS USADOS EN LA PAGINA https://bootswatch.com/3/superhero/#navbar *@
